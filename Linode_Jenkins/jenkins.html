@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in [Jenkins]</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #283E51, #4B79A1);
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .login-container .logo img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        .login-container h1 {
+            margin: 10px 0;
+        }
+        .login-container p {
+            font-size: 14px;
+            color: #ddd;
+        }
+        .form-row {
+            margin-bottom: 15px;
+        }
+        .form-row input[type="text"],
+        .form-row input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-row input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .submit-button {
+            background: #4B79A1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .submit-button:hover {
+            background: #5a8abc;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.svg" alt="Jenkins Logo">
+        </div>
+        <h1>Welcome to Jenkins</h1>
+        <p>Your gateway to automation</p>
+        <form method="post" action="/j_acegi_security_check">
+            <div class="form-row">
+                <input type="text" name="j_username" placeholder="Username" required>
+            </div>
+            <div class="form-row">
+                <input type="password" name="j_password" placeholder="Password" required>
+            </div>
+            <div class="form-row">
+                <label>
+                    <input type="checkbox" name="remember_me">
+                    Keep me signed in
+                </label>
+            </div>
+            <div class="form-row">
+                <button type="submit" class="submit-button">Sign in</button>
+            </div>
+        </form>
+        <div class="footer">
+            © 2024 Jenkins - All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+app.jiraHome=/var/atlassian/application-data/jira
+app.install.service=true
+launch.application=false
