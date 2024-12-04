@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #0052cc, #003d99);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 900px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+        }
+        .intro-section {
+            background: linear-gradient(to bottom, #0052cc, #0041a8);
+            color: #fff;
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro-section img {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+        .intro-section h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .intro-section p {
+            font-size: 16px;
+            text-align: center;
+        }
+        .intro-section a {
+            color: #fff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .login-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .login-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #0052cc;
+        }
+        .login-section form input[type="text"],
+        .login-section form input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #dfe1e6;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-section form input[type="submit"] {
+            background: linear-gradient(to bottom, #0052cc, #0041a8);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .login-section form input[type="submit"]:hover {
+            background: linear-gradient(to bottom, #0041a8, #003080);
+        }
+        .login-section a {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #0052cc;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .login-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro-section">
+            <img src="https://via.placeholder.com/120" alt="Welcome Graphic">
+            <h2>Welcome to Jira</h2>
+            <p>New to Jira? Explore the <a href="#">User's Guide</a> to get started.</p>
+        </div>
+        <div class="login-section">
+            <h2>Login to Jira</h2>
+            <form action="#" method="POST">
+                <input type="text" name="username" placeholder="Enter your username" required>
+                <input type="password" name="password" placeholder="Enter your password" required>
+                <input type="submit" value="Log In">
+            </form>
+            <a href="#">Forgot your password?</a>
+        </div>
+    </div>
+</body>
+</html>

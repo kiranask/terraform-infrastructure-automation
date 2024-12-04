@@ -1,0 +1,46 @@
+- name: Deploy Jenkins HTML file locally
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Update APT cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install required packages
+      ansible.builtin.apt:
+        name:
+          - nginx
+          - ufw
+        state: present
+
+    - name: Ensure the HTML file exists
+      ansible.builtin.stat:
+        path: /tmp/index.html
+      register: html_file
+
+    - name: Fail if HTML file does not exist
+      ansible.builtin.fail:
+        msg: "HTML file not found at /tmp/index.html"
+      when: not html_file.stat.exists
+
+    - name: Copy HTML file to the web server directory
+      ansible.builtin.copy:
+        src: /tmp/index.html
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
+      notify: Restart Nginx
+
+    - name: Start and enable Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: Restart Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
